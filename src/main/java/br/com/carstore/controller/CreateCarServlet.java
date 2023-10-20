@@ -18,7 +18,8 @@ public class CreateCarServlet extends HttpServlet {
 
     // 1.Post
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
 
         String carName = request.getParameter("car-name");
 
@@ -28,5 +29,4 @@ public class CreateCarServlet extends HttpServlet {
 
         request.getRequestDispatcher("index.html").forward(request, response);
     }
-
 }

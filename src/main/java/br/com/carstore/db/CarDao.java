@@ -10,11 +10,10 @@ public class CarDao {
 
     public void createCar(Car car)
     {
-
         String SQL = "INSERT INTO CAR (NAME) VALUES (?)";
 
-        try {
-
+        try
+        {
             Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
 
             System.out.println("success in database connection");
@@ -27,11 +26,10 @@ public class CarDao {
             System.out.println("success in insert car");
 
             connection.close();
-
-        } catch (Exception e) {
-
+        }
+        catch (Exception e)
+        {
             System.out.println("fail in database connection");
-
         }
 
     }
