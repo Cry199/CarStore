@@ -31,6 +31,5 @@ public class CarDao {
         {
             System.out.println("fail in database connection");
         }
-
     }
 }
