@@ -13,11 +13,11 @@
 
         <form action="/create-car" method="post">
 
-            <label>Car Nameaaa</label>
-            <input type="text" name="car-name" id="car-name">
+            <label>Car Name</label>
+            <input type="text" name="car-name" id="car-name" value="${param.name}">
+            <input type="hidden" id="id" name="id" value="${param.id}">
 
-            <button type="submit">Register</button>
-
+            <button type="submit">Save</button>
         </form>
 
         <div>
