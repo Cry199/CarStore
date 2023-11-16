@@ -1,9 +1,9 @@
 package br.com.carstore.db;
 
+import br.com.carstore.config.ConnectionPoolConfig;
 import br.com.carstore.model.Car;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -18,9 +18,7 @@ public class CarDao {
 
         try
         {
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
-
-            System.out.println("success in databaseaa connection");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
 
@@ -33,7 +31,7 @@ public class CarDao {
         }
         catch (Exception e)
         {
-            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -44,7 +42,7 @@ public class CarDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             System.out.println("success in database connection");
 
@@ -72,7 +70,7 @@ public class CarDao {
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
 
             return Collections.emptyList();
 
@@ -86,7 +84,7 @@ public class CarDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa", "sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             System.out.println("success in database connection");
 
@@ -100,7 +98,7 @@ public class CarDao {
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
+            System.out.println("Error: " + e.getMessage());
 
         }
 
@@ -113,7 +111,7 @@ public class CarDao {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "sa","sa");
+            Connection connection = ConnectionPoolConfig.getConnection();
 
             System.out.println("success in database connection");
 
@@ -129,9 +127,7 @@ public class CarDao {
 
         } catch (Exception e) {
 
-            System.out.println("fail in database connection");
             System.out.println("Error: " + e.getMessage());
-
         }
 
     }
