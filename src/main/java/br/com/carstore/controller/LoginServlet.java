@@ -27,7 +27,8 @@ public class LoginServlet extends HttpServlet {
 
         boolean isValidUser = new UserDao().verifyCredentials(user);
 
-        if (isValidUser) {
+        if (isValidUser)
+        {
 
             req.getSession().setAttribute("loggedUser", username);
 
